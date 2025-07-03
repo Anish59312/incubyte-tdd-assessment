@@ -20,4 +20,10 @@ describe("string calculator", () => {
     test("include \n as delimiter too", () => {
         expect(add("1\n2,3")).toBe(6);
     });
+
+    test("changing delimiter to ;", () => {
+      expect(add("//;\n1;2")).toBe(3);
+    });
+
+
 })
