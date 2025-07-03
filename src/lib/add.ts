@@ -15,6 +15,11 @@ export default function add(numbers: string): number {
       .map((x) => parseInt(x, 10))
       .filter((x) => !isNaN(x));
 
+      let negativeNumbers: number[] = numberArray.filter(x =>  x<0)
+      if(negativeNumbers.length>0)
+        throw new Error(
+          `negatives not allowed ${negativeNumbers.join(',')}`
+        );
 
   return numberArray.reduce((sum, num) => sum+num, 0)
 }
