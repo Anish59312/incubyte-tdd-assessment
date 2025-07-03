@@ -26,7 +26,7 @@ describe("string calculator", () => {
     });
 
     test("negative numbers should throw error", () => {
-      expect(() => add("-1,3")).toThrow("negatives not allowed -1");
+      expect(() => add("-1,3,-2")).toThrow("negatives not allowed -1,-2");
     });
   
 })
