@@ -8,4 +8,8 @@ describe("string calculator", () => {
     test("single number 1 should output 1", () =>{
         expect(add("1")).toBe(1)
     })
+
+    test("output of two numbers 1,2 = 3", () => {
+      expect(add("1,2")).toBe(3);
+    });
 })
