@@ -16,4 +16,8 @@ describe("string calculator", () => {
     test("output of any numbers 1,2,3,4,5,6 = 21", () => {
       expect(add("1,2,3,4,5,6")).toBe(21);
     });
+
+    test("include \n as delimiter too", () => {
+        expect(add("1\n2,3")).toBe(6);
+    });
 })
