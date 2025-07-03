@@ -4,9 +4,7 @@ export default function add(numbers: string): number {
   let defaultDelimiter = ','
   if (numbers.substring(0, 2) === "//"){
     defaultDelimiter = numbers.substring(2,3)
-    console.log("defaultDelimiter", defaultDelimiter);
     numbers = numbers.substring(4)
-    console.log("numbers", numbers)
   }
 
 
@@ -16,6 +14,7 @@ export default function add(numbers: string): number {
       .filter((x) => x !== "")
       .map((x) => parseInt(x, 10))
       .filter((x) => !isNaN(x));
+
 
   return numberArray.reduce((sum, num) => sum+num, 0)
 }

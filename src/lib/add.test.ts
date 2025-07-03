@@ -24,6 +24,4 @@ describe("string calculator", () => {
     test("changing delimiter to ;", () => {
       expect(add("//;\n1;2")).toBe(3);
     });
-
-
 })
