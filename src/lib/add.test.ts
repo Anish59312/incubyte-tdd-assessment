@@ -12,4 +12,8 @@ describe("string calculator", () => {
     test("output of two numbers 1,2 = 3", () => {
       expect(add("1,2")).toBe(3);
     });
+
+    test("output of any numbers 1,2,3,4,5,6 = 21", () => {
+      expect(add("1,2,3,4,5,6")).toBe(21);
+    });
 })
