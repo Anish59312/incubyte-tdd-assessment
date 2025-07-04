@@ -3,8 +3,14 @@ export default function add(numbers: string): number {
 
   let defaultDelimiter = ",";
   if (numbers.substring(0, 2) === "//") {
-    defaultDelimiter = numbers.substring(2, 3);
-    numbers = numbers.substring(4);
+    if(numbers.search('\n') - numbers.search('//') > 2){
+        defaultDelimiter = numbers.substring(3+1, numbers.search('\n')-1)
+        numbers = numbers.substring(numbers.search('\n'))
+    }
+    else{
+        defaultDelimiter = numbers.substring(2, 3);
+        numbers = numbers.substring(4);    
+    }
   }
 
   let numberArray: number[] = numbers

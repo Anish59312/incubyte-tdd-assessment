@@ -35,6 +35,6 @@ describe("string calculator", () => {
 
     test("delimiter should be of different any length when under []", () => {
       expect(add("//[***]\n1***2***3")).toBe(6);
-    }); 
+    });   
 
 })
