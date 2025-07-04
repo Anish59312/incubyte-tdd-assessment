@@ -35,9 +35,10 @@ describe("string calculator", () => {
 
     test("delimiter should be of different any length when under []", () => {
       expect(add("//[***]\n1***2***3")).toBe(6);
-      expect(add("//[***]\n1***2***3"));
-    });  
+    });
 
-
+    test("multiple delimiters of single length", () => {
+      expect(add("//[*][%]\n1*2%3")).toBe(6);
+    });
 
 })
