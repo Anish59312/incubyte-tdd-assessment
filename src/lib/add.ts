@@ -18,5 +18,7 @@ export default function add(numbers: string): number {
   if (negativeNumbers.length > 0)
     throw new Error(`negatives not allowed ${negativeNumbers.join(",")}`);
 
+  numberArray = numberArray.filter((x) => x <= 1000);
+
   return numberArray.reduce((sum, num) => sum + num, 0);
 }
