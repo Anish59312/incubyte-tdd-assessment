@@ -28,5 +28,8 @@ describe("string calculator", () => {
     test("negative numbers should throw error", () => {
       expect(() => add("-1,3,-2")).toThrow("negatives not allowed -1,-2");
     });
-  
+
+    test("number greater than 1000 should be ignored", () => {
+        expect(add("1002,2")).toBe(2);
+    }) 
 })
