@@ -32,4 +32,9 @@ describe("string calculator", () => {
     test("number greater than 1000 should be ignored", () => {
         expect(add("1002,2")).toBe(2);
     }) 
+
+    test("delimiter should be of different any length when under []", () => {
+      expect(add("//[***]\n1***2***3")).toBe(6);
+    }); 
+
 })
