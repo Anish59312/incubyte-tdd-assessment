@@ -20,6 +20,8 @@ export default function add(numbers: string): number {
   return numberArray.reduce((sum, num) => sum + num, 0);
 }
 
+// find delimiter of any types 
+// output delimiter and numberString
 function findDelimiterAndNumbers(input: string): {
   delimiter: string;
   numberString: string;
@@ -30,15 +32,14 @@ function findDelimiterAndNumbers(input: string): {
     return { delimiter: DEFAULT_DELIMITER, numberString: input };
   }
 
-  
   const newlineIndex = input.indexOf("\n");
   const delimiterSection = input.substring(2, newlineIndex);
   const numberString = input.substring(newlineIndex + 1);
 
   if (delimiterSection.length === 1) {
     return { delimiter: delimiterSection, numberString: numberString };
-  } else {
-    let delimiter = delimiterSection.slice(1, -1).split(/\]\[/).join('');
+  } else {//multiple delimiters
+    let delimiter = delimiterSection.slice(1, -1).split(/\]\[/).join(''); 
     return { delimiter: delimiter, numberString: numberString };
   }
 }
