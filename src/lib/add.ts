@@ -12,13 +12,12 @@ export default function add(numbers: string): number {
     .map((x) => x.trim())
     .filter((x) => x !== "")
     .map((x) => parseInt(x, 10))
-    .filter((x) => !isNaN(x));
+    .filter((x) => !isNaN(x))
+    .filter((x) => x <= 1000)
 
   let negativeNumbers: number[] = numberArray.filter((x) => x < 0);
   if (negativeNumbers.length > 0)
     throw new Error(`negatives not allowed ${negativeNumbers.join(",")}`);
-
-  numberArray = numberArray.filter((x) => x <= 1000);
 
   return numberArray.reduce((sum, num) => sum + num, 0);
 }
