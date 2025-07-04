@@ -30,7 +30,7 @@ function findDelimiterAndNumbers(input: string): {
     return { delimiter: DEFAULT_DELIMITER, numberString: input };
   }
 
-  //[delimiter]\n
+  
   const newlineIndex = input.indexOf("\n");
   const delimiterSection = input.substring(2, newlineIndex);
   const numberString = input.substring(newlineIndex + 1);
@@ -38,7 +38,7 @@ function findDelimiterAndNumbers(input: string): {
   if (delimiterSection.length === 1) {
     return { delimiter: delimiterSection, numberString: numberString };
   } else {
-    let delimiter = delimiterSection.slice(1, -1);
+    let delimiter = delimiterSection.slice(1, -1).split(/\]\[/).join('');
     return { delimiter: delimiter, numberString: numberString };
   }
 }
