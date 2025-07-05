@@ -45,4 +45,12 @@ describe("string calculator", () => {
       expect(add("//[**][%]\n1**2%3")).toBe(6);
     });
 
+   describe("additional test for edge cases", () => {
+      test("special characters of regrex ^", () => {
+        expect(add("//^\n1^2")).toBe(3);
+      });
+    });
+    
+
+
 })
