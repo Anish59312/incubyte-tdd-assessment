@@ -12,6 +12,16 @@ Implemented a simple string calculator as part of Incubyte’s technical assessm
 export default function add(numbers: string): number {}
 ```
 
+## Project Structure
+
+```
+src/
+├── lib/
+│   ├── add.ts      # Core calculator logic
+│   └── add.test.ts # Comprehensive test suite
+└── README.md       # Project documentation
+```
+
 ## Key Points
 
 - **Test-Driven Development**: Applied Red-Green-Refactor cycle for all test cases
@@ -83,15 +93,7 @@ npm run test
 npm run test:coverage
 ```
 
-## Project Structure
 
-```
-src/
-├── lib/
-│   ├── add.ts      # Core calculator logic (45 lines)
-│   └── add.test.ts # Comprehensive test suite (11 tests)
-└── README.md       # Project documentation
-```
 
 ## Development Methodology
 
