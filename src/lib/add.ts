@@ -37,9 +37,16 @@ function findDelimiterAndNumbers(input: string): {
   const numberString = input.substring(newlineIndex + 1);
 
   if (delimiterSection.length === 1) {
-    return { delimiter: delimiterSection, numberString: numberString };
+    return {
+      delimiter: escapeRegexCharacters(delimiterSection),
+      numberString: numberString,
+    };
   } else {//multiple delimiters
     let delimiter = delimiterSection.slice(1, -1).split(/\]\[/).join(''); 
     return { delimiter: delimiter, numberString: numberString };
   }
+}
+
+function escapeRegexCharacters(str: string): string {
+  return str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
